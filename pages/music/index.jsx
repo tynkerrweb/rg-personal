@@ -54,6 +54,7 @@ const Music = () => {
           className="flex items-center space-x-5 font-semibold w-fit mt-20"
           href="https://www.youtube.com/channel/UCajB8s5rz2BLS2kBQUCpgNQ"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <div className="w-20">
             <YoutubeIcon />

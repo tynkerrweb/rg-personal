@@ -57,6 +57,7 @@ const NavMobile = () => {
           className="flex items-center space-x-2 bg-gradient-to-r from-blue-400 to-blue-700 px-4 py-2 rounded-lg shadow-lg"
           href="https://drive.google.com/file/d/1C4ycxO8OM2GgEt8A4M4V6yw10OVBudos/view?usp=sharing"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <FiDownload className="w-5 h-5 text-white" />
           <p className="text-2xl font-heading text-white">Download Resume</p>
