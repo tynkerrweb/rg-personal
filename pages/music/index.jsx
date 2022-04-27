@@ -21,10 +21,9 @@ const videos = [
 ];
 
 const Music = () => {
-  console.log(videos[0].url);
   return (
     <PageContainer>
-      <div className="pt-80 pb-40 mx-60">
+      <div className="pt-52 pb-40 mx-10 lg:mx-60">
         <h1>Welcome to the music section of my page</h1>
         <p className="text-2xl my-10">
           I’m an aspiring hindustani classical vocalist. I have been training
@@ -33,10 +32,17 @@ const Music = () => {
           <br />
           Here are some of my recent performances. Hope you like them!
         </p>
-        <div className="grid grid-cols-2 grid-rows-2 gap-y-20 py-28">
-          {videos.map((video) => (
-            <div className="w-fit border border-black rounded">
-              <ReactPlayer url={video.url} controls />
+        <div className="w-full space-y-10 lg:space-y-0 lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-x-40 lg:gap-y-32 lg:py-28">
+          {videos.map((video, index) => (
+            <div className="border border-black rounded" key={index}>
+              <div className="h-60 lg:h-80">
+                <ReactPlayer
+                  url={video.url}
+                  controls={true}
+                  width="100%"
+                  height="100%"
+                />
+              </div>
               <div className="m-3">
                 <h2>{video.raag}</h2>
                 <p>{video.taal}</p>
@@ -44,10 +50,16 @@ const Music = () => {
             </div>
           ))}
         </div>
-        <div className="flex items-center space-x-5 font-semibold w-fit">
-          <YoutubeIcon />
-          <p className="text-3xl">Subscribe to my YouTube Channel</p>
-        </div>
+        <a
+          className="flex items-center space-x-5 font-semibold w-fit mt-20"
+          href="https://www.youtube.com/channel/UCajB8s5rz2BLS2kBQUCpgNQ"
+          target="_blank"
+        >
+          <div className="w-20">
+            <YoutubeIcon />
+          </div>
+          <p className="text-xl lg:text-3xl">Subscribe to my YouTube Channel</p>
+        </a>
       </div>
     </PageContainer>
   );

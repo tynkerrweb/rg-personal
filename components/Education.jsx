@@ -12,7 +12,7 @@ const uni = [
     degree: "Master of Science",
     major: "Electrical Engineering",
     graduation: "Dec 2013",
-    logo: <Image src="/logos/utd.png" alt="utd" height={50} width={50} />,
+    logo: <Image src="/logos/utd.png" alt="utd" height="100%" width="100%" />,
   },
   {
     name: (
@@ -23,24 +23,34 @@ const uni = [
     degree: "Bachelor of Engineering",
     major: "Electronics and Communications",
     graduation: "Aug 2010",
-    logo: <Image src="/logos/sdm.png" alt="sdm" height={50} width={41} />,
+    logo: <Image src="/logos/sdm.png" alt="sdm" height="100%" width="100%" />,
   },
 ];
 
 const Education = () => {
   return (
-    <SectionContainer title="Education" className="flex space-x-20">
+    <SectionContainer
+      title="Education"
+      className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-20  mr-7 lg:mr-0"
+    >
       {uni.map((u, i) => {
         return (
-          <div key={i} className="space-y-7 shadow-xl px-10 py-7 rounded-lg">
+          <div
+            key={i}
+            className="space-y-3 lg:space-y-7 shadow-xl p-5 lg:px-10 lg:py-7 rounded-lg"
+          >
             <div className="flex items-center space-x-5">
-              {u.logo}
-              <h4 className="text-base">{u.name}</h4>
+              <div className="w-10 h-[auto]">{u.logo}</div>
+              <h4 className="text-base font-body lg:font-heading">{u.name}</h4>
             </div>
             <div className="flex flex-col">
-              <p className="text-2xl leading-7">{u.degree}</p>
-              <p>{u.major}</p>
-              <p className="text-sm text-slate-500 mt-2">{u.graduation}</p>
+              <p className="font-heading lg:font-body lg:text-2xl leading-7">
+                {u.degree}
+              </p>
+              <p className="text-xs lg:text-base">{u.major}</p>
+              <p className="text-xs lg:text-sm text-slate-500 mt-2">
+                {u.graduation}
+              </p>
             </div>
           </div>
         );

@@ -1,12 +1,52 @@
 import Head from "next/head";
+import { ExperienceDesktop, ExperienceMobile } from "../components/Experience";
 import Education from "../components/Education";
-import Experience from "../components/Experience";
 import PageContainer from "../components/PageContainer";
-import Sidebar from "../components/Sidebar";
 import Skills from "../components/Skills";
 import Tools from "../components/Tools";
+import useMediaQuery from "../components/hooks/useMediaQuery";
+import Nav from "../components/nav";
+import Footer from "../components/Footer";
+import Sidebar from "../components/Sidebar";
 
 export default function Home() {
+  const isDesktop = useMediaQuery("(min-width: 960px)");
+
+  const DesktopLayout = () => {
+    return (
+      <PageContainer>
+        <div className="flex w-full">
+          <Sidebar />
+          <div className="mt-72 mb-60 space-y-72 w-full">
+            <ExperienceDesktop />
+            <Education />
+            <Skills />
+            <Tools />
+          </div>
+        </div>
+      </PageContainer>
+    );
+  };
+  const MobileLayout = () => {
+    return (
+      <>
+        <div className="flex">
+          <Sidebar />
+          <div
+            className="my-32 space-y-32
+          "
+          >
+            <ExperienceMobile />
+            <Education />
+            <Skills />
+            <Tools />
+          </div>
+          <Nav />
+        </div>
+        <Footer />
+      </>
+    );
+  };
   return (
     <div className="flex flex-col lg:w-full">
       <Head>
@@ -15,17 +55,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <PageContainer>
-        <div className="flex lg:w-full">
-          <Sidebar />
-          <div className="mt-80 mb-60 space-y-72 lg:w-full ml-24 lg:ml-0">
-            <Experience />
-            <Education />
-            <Skills />
-            <Tools />
-          </div>
-        </div>
-      </PageContainer>
+      {isDesktop ? <DesktopLayout /> : <MobileLayout />}
     </div>
   );
 }

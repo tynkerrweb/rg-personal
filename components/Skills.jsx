@@ -67,16 +67,16 @@ const Skills = () => {
   return (
     <SectionContainer
       title="Skills"
-      className="grid grid-rows-2 grid-cols-3 gap-y-14"
+      className="grid grid-rows-3 lg:grid-rows-2 grid-cols-2 lg:grid-cols-3 gap-x-5 lg:gap-y-14 mr-7 lg:mr-0"
     >
       {skills.map((item, index) => {
         return (
-          <div key={index} className="space-y-5">
-            <div className="flex items-center space-x-3 bg-blue-200 w-80 justify-center py-1 rounded">
+          <div key={index} className="space-y-1 lg:space-y-5">
+            <div className="flex flex-col lg:flex-row items-center lg:space-x-3 space-y-3 lg:space-y-0 bg-blue-50 lg:bg-blue-200 lg:w-80 justify-center p-3 lg:px-0 lg:py-1 rounded">
               {item.icon}
               <h6>{item.catagory}</h6>
             </div>
-            <ul className="flex flex-col">
+            <ul className="hidden lg:flex flex-col">
               {item.skillList.map((skill, index) => {
                 return <li key={index}>{skill}</li>;
               })}
@@ -89,3 +89,4 @@ const Skills = () => {
 };
 
 export default Skills;
+//lg:grid lg:grid-rows-2 lg:grid-cols-3 lg:gap-y-14 flex flex-col space-y-5 lg:space-y-0 mr-7 lg:mr-0

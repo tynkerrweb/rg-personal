@@ -42,16 +42,16 @@ const Tools = () => {
   return (
     <SectionContainer
       title="Tools"
-      className="grid grid-rows-2 grid-cols-3 gap-y-14"
+      className="w-fit grid grid-rows-3 lg:grid-rows-2 grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-5 lg:gap-x-28 lg:gap-y-14 mr-7 lg:mr-0"
     >
       {tools.map((item, index) => {
         return (
-          <div key={index} className="flex flex-col space-y-5">
-            <div className="flex items-center space-x-3 bg-amber-200 w-60 justify-center py-1 rounded">
+          <div key={index} className="flex flex-col space-y-3">
+            <div className="flex flex-col lg:flex-row items-center space-y-3 lg:space-y-0 lg:space-x-3 bg-amber-100 lg:bg-amber-200 lg:w-60 justify-center p-3 lg:px-0 lg:py-1 rounded">
               {item.icon}
               <h6>{item.catagory}</h6>
             </div>
-            <ul className="flex flex-col">
+            <ul className="hidden lg:flex flex-col">
               {item.toolList.map((skill, index) => {
                 return <li key={index}>{skill}</li>;
               })}

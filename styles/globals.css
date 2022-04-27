@@ -22,12 +22,12 @@ a {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+.link a {
   @apply font-heading text-2xl;
 }
 
 h1 {
-  @apply font-heading text-5xl font-medium tracking-tight;
+  @apply font-heading text-3xl lg:text-5xl font-medium tracking-tight;
 }
 
 h2 {
@@ -35,7 +35,7 @@ h2 {
 }
 
 h3 {
-  @apply text-xl font-heading text-blue-900 tracking-tighter;
+  @apply lg:text-xl font-heading text-blue-900 tracking-tighter;
 }
 
 h4 {
@@ -43,15 +43,15 @@ h4 {
 }
 
 h6 {
-  @apply text-sm uppercase tracking-widest font-semibold;
+  @apply text-xs lg:text-sm font-heading uppercase tracking-widest font-semibold text-center lg:text-left;
 }
 
 .divider {
-  @apply h-px bg-gray-300 lg:mx-14;
+  @apply h-px w-full lg:w-[auto] bg-gray-300 lg:mx-14;
 }
 
 .svgicon {
-  @apply h-5 w-5 text-stone-600;
+  @apply h-4 lg:h-5 w-4 lg:w-5 text-stone-600;
 }
 
 .form-label {
